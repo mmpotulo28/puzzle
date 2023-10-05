@@ -1,63 +1,62 @@
 .puzzle_cont {
-    display: block;
-    border: 1px solid #000000;
-    text-align: center;
-    width: fit-content;
-    height: 100%;
-    padding: 50px;
-    margin: auto;
+  display: block;
+  border: 1px solid #000000;
+  text-align: center;
+  width: fit-content;
+  height: 100%;
+  padding: 50px;
+  margin: auto;
 }
 
 .puzzle_board {
-    display: block;
-    border: 1px solid green;
-    width: fit-content;
-    height:fit-content;
-    margin: auto;
-    background-color: #000000;
-    padding: 0;
+  display: block;
+  border: 3px solid green;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  background-color: green;
+  padding: 0;
 }
 
 .puzzle-peices {
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 100px);
-    grid-gap: 10px;
-    width: fit-content;
-    height: fit-content;
-    padding: 10px;
-    margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 110px);
+  grid-template-rows: repeat(4, 100px);
+  grid-gap: 0px;
+  padding: 2px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
 }
 
 .puzzle-peices .puzzle-peice {
-    display: block;
-    border: 1px solid #000000;
-    width: 100%;
-    height: 100%;
-    transition: all 0.5s ease;
+  display: block;
+  border: 2px solid #000000;
+  width: auto;
+  height: auto;
+  transition: all 0.5s ease;
+  background-clip: padding-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.puzzle-peices .puzzle-peice:focus {
+  z-index: 1000;
 }
 
 .puzzle-peices .puzzle-peice:hover {
-    cursor: pointer;
-    opacity: 0.5;
+  cursor: pointer;
+  border: 2px solid white;
+  scale: 0.9;
+  z-index: 0;
+  outline-offset: 2px;
 }
 
-.win-order {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
-    width: 100%; 
-    border-top: 2px solid purple;
-
-}
-
-.win-order .win-peice {
-    display: block;
-    border: 1px solid #000000;
-    width: 25px;
-    height: 25px;
-    margin: 10px 0;
-    border-radius: 20px;
+.puzzle-image {
+  display: block;
+  border: 1px solid green;
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }
