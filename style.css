@@ -34,7 +34,7 @@
   border: 2px solid #000000;
   width: auto;
   height: auto;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -43,7 +43,8 @@
 
 .puzzle-peices .puzzle-peice:hover {
   cursor: pointer;
-  opacity: 0.5;
+  scale: 1.1;
+  z-index: 1000;
 }
 
 .puzzle-image {
@@ -57,17 +58,16 @@
 .win-container {
   display: none;
   position: absolute;
-  width: 300px;
-  height: 200px;
-  top: 30%;
-  left: 30%;
-  bottom: auto;
-  right: auto;
-  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 100;
+  padding: 20px;
   background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(50px);
-  border-radius: 50px 20px;
+  backdrop-filter: blur(80px);
+  border-radius: 20px;
   box-shadow: 0px 0px 20px black;
   text-align: center;
   color: green;
@@ -82,7 +82,7 @@
   border-radius: 20px;
   box-shadow: 3px 4px 4px green;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 40px;
   background-color: grey;
   padding: 10px;
 }
@@ -92,4 +92,149 @@
   color: green;
   box-shadow: 0px 0px 24px green;
   background-color: transparent;
+}
+
+/* scoreBoard */
+.score-board {
+  display: block;
+  position: absolute;
+  top: 27%;
+  left: 0;
+  /* transform: translate(-50%, -30%); */
+  width: 70px;
+  height: 60px;
+  color: green;
+  background-color: grey;
+  padding: 0;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 3px 4px 4px green;
+  overflow: hidden;
+}
+.score-btn {
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 60px;
+  border: none;
+  border-bottom: 4px solid green;
+  border-radius: 0 20px 20px 0;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  padding: 10px 5px;
+  transition: all 0.5s ease;
+}
+
+.score-btn:hover {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+}
+
+/* when scoreboard  btn is hovered the scoreboard shoud increase its with */
+.score-board:hover,
+.score-board:focus-within {
+  width: fit-content;
+  height: fit-content;
+  transition: all 0.5s ease;
+  border-radius: 0 20px 0px 0;
+  box-shadow: 0px 0px 24px green;
+  overflow: hidden;
+}
+
+.score-board:hover > .score-btn {
+  width: 100%;
+  border-radius: 0 20px 0 0;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, green 35%, black, green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.score-board .close-btn {
+  float: right;
+  background-color: rgb(0, 0, 0, 0.2);
+  outline: none;
+  border: none;
+  font-size: 18px;
+}
+
+.score-board .close-btn:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}
+
+.score-board .close-btn:focus {
+  background-color: white;
+  color: red;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+.scores {
+  display: table;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  table-layout: auto;
+  background-color: grey;
+}
+
+.scores caption {
+  display: table-caption;
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(to right, green 35%, black, green);
+  width: 100%;
+  margin: auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.scores thead tr {
+  display: table-row;
+  background-color: green;
+  width: fit-content;
+  color: white;
+  font-weight: bold;
+  outline: 1px solid black;
+  margin: 0;
+}
+
+.scores thead tr th {
+  display: table-cell;
+  padding: 5px 10px;
+}
+
+.scores tbody tr {
+  display: table-row;
+  width: fit-content;
+  outline: 1px solid green;
+  outline-offset: 0;
+  font-weight: normal;
+  color: rgb(254, 254, 254);
+}
+
+.scores tbody tr:nth-child(odd) {
+  background-color: rgb(150, 150, 150);
+}
+
+.scores tbody tr td {
+  display: table-cell;
+  width: fit-content;
+  text-wrap: nowrap;
+  padding: 5px 10px;
 }

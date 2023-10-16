@@ -58,7 +58,7 @@ function setPuzzle() {
 
     //reset puzzle pieces
     resetPuzzle();
-    
+
     //pick puzzle folder
     random = Math.floor(Math.random() * 3);
     puzzleFolder = puzzleFolders[random].toString();
